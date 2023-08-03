@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Events and Animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div
+      id="box"
+      style="width: 100px; height: 100px; background-color: red; display: none"
+    ></div>
+
+    <button id="animateButton">Animate</button>
+  </body>
+  <script>
+    $(document).ready(function () {
+      // Code to be executed when the document is ready
+
+      // Event handler for the button click
+      $("#animateButton").on("click", function () {
+        // Select the "box" div and apply the fade-in animation
+        $("#box").fadeIn(1000, function () {
+          // After the fade-in animation is completed, apply the fade-out animation
+          $(this).fadeOut(1000);
+        });
+      });
+    });
+  </script>
+</html>
